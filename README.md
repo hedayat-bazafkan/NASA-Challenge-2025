@@ -29,3 +29,39 @@ The system is fully containerized using **Docker** and exposes a REST API that c
 
 ## 📂 Project Structure
 
+
+---
+
+## 🧮 Algorithm Summary
+
+### Step 1: Data Collection
+NASA’s open datasets:
+- [Kepler cumulative data](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=cumulative)
+- [K2 candidates](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=k2pandc)
+- [TESS Objects of Interest (TOI)](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=TOI)
+
+### Step 2: Preprocessing
+- Handle missing values  
+- Normalize numeric features  
+- Feature selection: orbital period, radius ratio, transit depth, etc.
+
+### Step 3: Model Training
+- ML Algorithm: **Random Forest Classifier**  
+- Training split: 80% training / 20% validation  
+- Evaluation: F1-score, precision, recall  
+
+### Step 4: Prediction API
+- Built with **FastAPI**  
+- `/predict` endpoint accepts JSON input  
+- Returns: `confirmed`, `candidate`, or `false positive`
+
+---
+
+## 🐳 Quick Start (Local Setup)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/hedayat-bazafkan/NASA-Challenge-2025.git
+cd NASA-Challenge-2025
+
+
